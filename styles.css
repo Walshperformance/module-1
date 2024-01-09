@@ -1,9 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,600;6..96,900&family=Lemon&display=swap');
 
 *{
     padding: 0;
     margin: 0;
-    box-sizing: border-box
-    font-family: "Poppins", sans-serif;
+    box-sizing: border-box;
+    font-family: "lemon", sans-serif;
 }
 body {
     min-height: 100vh;
@@ -11,10 +12,67 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: black;
-
+    color: white;
     background: url(/R.jfif);
     background-size: cover;
-    background-color: rgba (0, 0, 0, 0.6);
+}
+body::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.30);
     z-index: -1;
 }
+
+.input {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40px;
+}
+ .input label {
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 8px;
+    min-width: 300px;
+    font-size: 16px;
+ }
+
+ .input select {
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    padding: 8px 4px;
+    background-color: #6236ff;
+    color: beige;
+ }
+
+ .input select:focus {
+    outline: none;
+ }
+
+ .circle-wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-bottom: 40px;
+ }
+
+ .circle-outline {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 15px solid #f1f1f1;
+ }
+
+ .circle-progress {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    background-color: #6236ff;
+    border-radius: 50%;
+ }
+ 
