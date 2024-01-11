@@ -1,22 +1,33 @@
-// setTimeout(() => {
-    // console.log("Delayed for 1 second.");
-  // }, "5000");
-  // testTimer2("3000")
 
-  function testTimer(time) {
-    setTimeout(() => {
-      console.log(`Delayed for ${time / 1000} seconds`);
-    }, time);
+function handleTimeRemaining() {
+  const timeRemainingElement = document.getElementById('time-remaining');
+  timeRemainingElement.innerHTML = 'bananas';
+}
+
+// const select = document.getElementById('select');
+
+const select = document.querySelector('#select');
+
+function logValue() {
+  console.log('---in log value---')
+  switch (this.value) {
+    case '3':
+        console.log('option 1 selected');
+        break;
+    case '5':
+        alert('option 2 selected');
+        break;
+    case '8':
+        confirm('You chose option 3, didn\'t you?');
+        break;
+    default:
+      console.log('what are you doing this is not an option')
   }
+}
 
-  // testTimer("5000")
-
-  const testTimer2 = (time) => {
-    setTimeout(() => {
-      console.log(`Delayed for ${time / 1000} seconds`);
-    }, time);
-  }
-  testTimer2("3000")
-
-
+console.log('---select---', select)
+if (select) {
+  console.log('---select in if statement---', select)
+  select.addEventListener('change', logValue);
+}
 

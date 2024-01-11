@@ -10,7 +10,7 @@
 <body>
     <div class="input">
         <label>Select Time</label>
-        <select class="time-input">
+        <select class="time-input" id="select">
             <option value="3">3 Minutes</option>
             <option value="5">5 Minutes</option>
             <option value="8">8 Minutes</option>
@@ -22,8 +22,8 @@
         <div class="circle-progress"></div>
 
     </div>
-    <p class="Time Remaining"></p>
+    <p id="time-remaining">TIME</p>
     <p class="instructions">It's time to focus on your breath and relax</p>
-    <button class="start">Begin Session</button>
+    <button class="start" onclick="handleTimeRemaining()">Begin Session</button>
 </body>
 </html>
