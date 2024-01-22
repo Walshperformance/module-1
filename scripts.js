@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function() {
   
   let startTime = 0; // Record the start time
 
-  function updateElapsedTime(timerTimeInSeconds) {
+  function timeRemaining(timerTimeInSeconds) {
     const currentTime = new Date().getTime();
     const elapsedTime = currentTime - startTime;
 
