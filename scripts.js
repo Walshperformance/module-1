@@ -15,14 +15,19 @@ document.addEventListener("DOMContentLoaded", function() {
     switch (this.value) {
       case '3':
           console.log('3 minutes selected');
-          updateElapsedTime(180)
+          startTimer(180)
           break;
       case '5':
-          alert('option 2 selected');
+          alert('5 minutes selected');
+          startTimer(300)
           break;
       case '8':
-          confirm('You chose option 3, didn\'t you?');
+          confirm('8 minutes selected');
+          startTimer(480)
           break;
+      case '10':
+          confirm('10 minutes selected');
+          startTimer(600)
       default:
         console.log('what are you doing this is not an option')
     }
@@ -37,40 +42,24 @@ document.addEventListener("DOMContentLoaded", function() {
 
   function timeRemaining(timerTimeInSeconds) {
     const currentTime = new Date().getTime();
-    const elapsedTime = currentTime - startTime;
+    const remainingTime = currentTime - startTime;
+    
 
     // Calculate minutes and seconds
-    const minutes = Math.floor(elapsedTime / (1000 * 60));
-    const seconds = Math.floor((elapsedTime % (1000 * 60)) / 1000);
+    const minutes = Math.floor(remainingTime / (1000 * 60));
+    const seconds = Math.floor((remainingTime % (1000 * 60)) / 1000);
 
     // Format the time as "mm:ss"
     const timeString = `${minutes < 10 ? '0' : ''}${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
 
-    /*
-      Ternary operator is a shorthand for an if/else statement
-      if (minutes < 10) {
-        return '0';
-      } else {
-        return '';
-      }
-
-      the equivalent using ternary operator is
-      minutes < 10 ? '0' : ''
-    
-    */
 
     // Update the UI
     document.getElementById("time-remaining").innerText = timeString;
 
-    if (elapsedTime >= timerTimeInSeconds) {
-      startTime = new Date().getTime(); // this will reset the start time
+    if (remainingTime <= timerTimeInSeconds) {
+      startTime = new Date().getTime(); // I changed this to be less than or equal to
     }
     // Call the function again after 1 second
-    setTimeout(updateElapsedTime, 1000);
+    setTimeout(() => timeRemaining(timerTimeInSeconds), 1000);
   }
-
-  // Initial call to start updating elapsed time
-  updateElapsedTime();
 });
-
-  
