@@ -5,7 +5,7 @@ let startTime = 0;
 //every second needs to subtract a second (counting down)
 //make time human readable (00:00)
 //having the timer stop at zero for each option
-function updateElapsedTime(timerTimeInSeconds) {
+function updateRemainingTime(timerTimeInSeconds) {
   const timeRemaining = timerTimeInSeconds;
 
   console.log('---timeRemaining---', timeRemaining)
@@ -30,14 +30,14 @@ function updateElapsedTime(timerTimeInSeconds) {
    // updateElapsedTime(timeRemaining - 1), 1000
   // });
   setTimeout(function () {
-    updateElapsedTime(timeRemaining - 1);
+    updateRemainingTime(timeRemaining - 1);
   }, 1000);
 }
 
 // Start the timer
 function startTimer(timerTimeInSeconds) {
   startTime = timerTimeInSeconds;
-  updateElapsedTime(timerTimeInSeconds);
+  updateRemainingTime(timerTimeInSeconds);
 }
 
 
@@ -69,3 +69,9 @@ document.addEventListener("DOMContentLoaded", function () {
   select.addEventListener('change', setTimerValue);
 });
 
+
+// Grow/Shrink Circle
+
+const growCircle = () ==> {
+circleProgress.classList.add("circle-grow")
+}
