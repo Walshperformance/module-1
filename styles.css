@@ -75,6 +75,7 @@ body::after {
     background-color: #3639ff;
     border-radius: 50%;
     transition: 4s ease-in;
+    transition: 8s ease-out;
  }
  
    .circle-grow {

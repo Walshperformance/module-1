@@ -71,7 +71,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 // Grow/Shrink Circle
-
+const circleProgress = document.querySelector('.circle-progress')
 const growCircle = () ==> {
-circleProgress.classList.add("circle-grow")
-}
+circleProgress.classList.add("circle-grow");
+setTimeout(() ==> {
+  circleProgress.classList.remove("circle-grow");
+
+}, 8000);
+};
